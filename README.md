@@ -1,2 +1,2 @@
-# Python_Basics
+# Python Basics
 A Python Tutorial for Beginners
