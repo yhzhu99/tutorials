@@ -1,2 +1,2 @@
-# R_Basics
+# R Basics
 R Tutorial for Beginners
