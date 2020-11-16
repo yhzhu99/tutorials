@@ -11,7 +11,7 @@
 
 - 环境变量(应该已经配好了)
 
-![](2020-11-16-14-14-06.png)
+![](img/2020-11-16-14-14-06.png)
 
 - 设置代理
 
@@ -23,7 +23,7 @@ go env -w GOPROXY=https://goproxy.cn,direct
 
 - 检查Go是否安装成功(查看go版本)
 
-![](2020-11-16-14-15-32.png)
+![](img/2020-11-16-14-15-32.png)
 
 ## Goland
 
@@ -38,11 +38,11 @@ go env -w GOPROXY=https://goproxy.cn,direct
 - 安装插件Go
 - Ctrl+Shift+P 打开命令面板，输入go:install/update tools，回车
 
-![](2020-11-16-14-36-03.png)
+![](img/2020-11-16-14-36-03.png)
 
 全选，Click "OK"
 
-![](2020-11-16-14-36-25.png)
+![](img/2020-11-16-14-36-25.png)
 
 - Example: `hello.go`
 
