@@ -70,7 +70,7 @@ go run hello.go //其实是2步：go build hello.go + ./hello
 - `-v`：打印出被构建的代码包的名字
 - `-u`：已存在相关的代码包，强行更新代码包及其依赖包
 
-- 创建一个Gin Project (新建一个Folder，如GinTest)
+- 创建一个Gin Project (新建一个Folder，如`gin-project`)
 - 用VS Code打开该文件夹
 - 在根目录下，创建`main.go`
 
@@ -94,12 +94,36 @@ func main() {
 - 在根目录下通过以下命令：`go mod`来管理Package
 
 ```go
-go mod init GinTest
+go mod init gin-project
 ```
 
 - 运行：`go run main.go`
 - 浏览器中打开`localhost:8080/ping`可观察到返回到的json数据
 
+**Go中package的用法参见`go-project`的目录结构、`main.go`中的写法(`import`, `dao.New()`)**
+
 ## GORM
 
-> ORM
+> Golang写的，开发人员友好的ORM库
+
+see `main.go` in `gin-project` directory
+
+```go
+import (
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
+)
+
+func main() {
+	db, err := gorm.Open("mysql",
+		"root:@buaa21@tcp(101.132.227.56:3306)/test?charset=utf8&parseTime=True&loc=Local")
+	db.SingularTable(true)
+	if err != nil {
+		fmt.Println(err)
+		return
+	} else {
+		fmt.Println("connection succeeded")
+	}
+	defer db.Close()
+}
+```
