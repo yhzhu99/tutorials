@@ -36,9 +36,36 @@ go env -w GOPROXY=https://goproxy.cn,direct`
 
 ![](2020-11-16-16-08-01.png)
 
+### 使用VS Code
+
+（适合执行小文件。对于我们这个较大的后端项目，VS Code并不方便管理，不推荐）
+
+- 安装插件Go
+
+ctrl+shift+p 打开命令面板，输入go:install/update tools，回车
+
+![](2020-11-16-14-36-03.png)
+
+全选，Click "OK"
+
+![](2020-11-16-14-36-25.png)
+
+- Example: `hello.go`
+
 ```go
-go build main.go
-go run main.go
+package main
+
+import "fmt"
+
+func main(){
+    fmt.Println("Hello, World!")
+}
+```
+
+在该文件的目录下，在Terminal中运行：
+
+```go
+go run hello.go
 ```
 
 ## Gin
