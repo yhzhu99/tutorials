@@ -18,10 +18,10 @@
 在cmd中：
 
 ```go
-go env -w GOPROXY=https://goproxy.cn,direct`
+go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
-- 检查Go是否安装成功
+- 检查Go是否安装成功(查看go版本)
 
 ![](2020-11-16-14-15-32.png)
 
@@ -36,8 +36,7 @@ go env -w GOPROXY=https://goproxy.cn,direct`
 ### 使用VS Code
 
 - 安装插件Go
-
-Ctrl+Shift+P 打开命令面板，输入go:install/update tools，回车
+- Ctrl+Shift+P 打开命令面板，输入go:install/update tools，回车
 
 ![](2020-11-16-14-36-03.png)
 
@@ -65,7 +64,7 @@ go run hello.go //其实是2步：go build hello.go + ./hello
 
 ## Gin
 
-安装 Gin：在Terminal中，输入`go get -u -v github.com/gin-gonic/gin`
+安装 Gin：在Terminal中，输入`go get -u -v github.com/gin-gonic/gin` (建议开VPN)
 
 
 - `-v`：打印出被构建的代码包的名字
@@ -92,13 +91,14 @@ func main() {
 }
 ```
 
-- 在根目录下使用以下`go mod`管理Package
+- 在根目录下通过以下命令：`go mod`来管理Package
 
 ```go
 go mod init GinTest
 ```
 
 - 运行：`go run main.go`
+- 浏览器中打开`localhost:8080/ping`可观察到返回到的json数据
 
 ## GORM
 
