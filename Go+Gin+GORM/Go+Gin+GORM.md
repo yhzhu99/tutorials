@@ -1,8 +1,9 @@
 # Golang 后端环境配置
-
 ## Go
 
 > Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+
+[菜鸟Go 语言教程](https://www.runoob.com/go/go-tutorial.html)
 
 [Download Go](https://golang.org/dl/)
 
@@ -30,19 +31,13 @@ go env -w GOPROXY=https://goproxy.cn,direct`
 
 [Download Goland](https://www.jetbrains.com/go/)
 
-- Example: create a new project: "awesomeProject"
-
-[Reference: 让你的Golang项目在IDE里跑起来](https://cloud.tencent.com/developer/article/1596713)
-
-![](2020-11-16-16-08-01.png)
+要用的自行研究
 
 ### 使用VS Code
 
-（适合执行小文件。对于我们这个较大的后端项目，VS Code并不方便管理，不推荐）
-
 - 安装插件Go
 
-ctrl+shift+p 打开命令面板，输入go:install/update tools，回车
+Ctrl+Shift+P 打开命令面板，输入go:install/update tools，回车
 
 ![](2020-11-16-14-36-03.png)
 
@@ -62,13 +57,48 @@ func main(){
 }
 ```
 
-在该文件的目录下，在Terminal中运行：
+在该文件的目录下，在Terminal中运行以下命令，可打印出`Hello, World!`：
 
 ```go
-go run hello.go
+go run hello.go //其实是2步：go build hello.go + ./hello
 ```
 
 ## Gin
+
+安装 Gin：在Terminal中，输入`go get -u -v github.com/gin-gonic/gin`
+
+
+- `-v`：打印出被构建的代码包的名字
+- `-u`：已存在相关的代码包，强行更新代码包及其依赖包
+
+- 创建一个Gin Project (新建一个Folder，如GinTest)
+- 用VS Code打开该文件夹
+- 在根目录下，创建`main.go`
+
+```go
+package main
+
+import "github.com/gin-gonic/gin"
+
+func main() {
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
+
+	})
+	r.Run()
+}
+```
+
+- 在根目录下使用以下`go mod`管理Package
+
+```go
+go mod init GinTest
+```
+
+- 运行：`go run main.go`
 
 ## GORM
 
