@@ -1,4 +1,4 @@
-module GinTest
+module gin-project
 
 go 1.15
 
