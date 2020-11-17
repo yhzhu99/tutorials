@@ -36,11 +36,14 @@ go env -w GOPROXY=https://goproxy.cn,direct
 ### 使用VS Code
 
 - 安装插件Go
-- Ctrl+Shift+P 打开命令面板，输入go:install/update tools，回车
+
+![](img/2020-11-16-14-22-50.png)
+
+- Ctrl+Shift+P 打开命令面板，输入go: Install/Update tools，Press "Enter"
 
 ![](img/2020-11-16-14-36-03.png)
 
-全选，Click "OK"
+- 全选，Click "OK"
 
 ![](img/2020-11-16-14-36-25.png)
 
@@ -56,7 +59,7 @@ func main(){
 }
 ```
 
-在该文件的目录下，在Terminal中运行以下命令，可打印出`Hello, World!`：
+- 在该文件的目录下，在Terminal中运行以下命令，可打印出`Hello, World!`：
 
 ```go
 go run hello.go //其实是2步：go build hello.go + ./hello
@@ -64,11 +67,9 @@ go run hello.go //其实是2步：go build hello.go + ./hello
 
 ## Gin
 
-安装 Gin：在Terminal中，输入`go get -u -v github.com/gin-gonic/gin` (建议开VPN)
-
-
-- `-v`：打印出被构建的代码包的名字
-- `-u`：已存在相关的代码包，强行更新代码包及其依赖包
+- 安装 Gin：在Terminal中，输入`go get -u -v github.com/gin-gonic/gin` (建议开VPN)
+  - `-v`：打印出被构建的代码包的名字
+  - `-u`：已存在相关的代码包，强行更新代码包及其依赖包
 
 - 创建一个Gin Project (新建一个Folder，如`gin-project`)
 - 用VS Code打开该文件夹
@@ -100,13 +101,15 @@ go mod init gin-project
 - 运行：`go run main.go`
 - 浏览器中打开`localhost:8080/ping`可观察到返回到的json数据
 
-**Go中package的用法参见`go-project`的目录结构、`main.go`中的写法(`import`, `dao.New()`)**
+**Note:**
+
+- Go中package的用法参见`go-project`的目录结构、`main.go`中的写法(`import`, `dao.New()`，大小写...)
 
 ## GORM
 
 > Golang写的，开发人员友好的ORM库
 
-see `main.go` in `gin-project` directory
+- 基础的连接MySQL的用法见 `main.go` in `gin-project` directory
 
 ```go
 import (
@@ -127,3 +130,5 @@ func main() {
 	defer db.Close()
 }
 ```
+
+如果能在Terminal中观察到`"connection succeeded"`，则表明GORM配置完成。
