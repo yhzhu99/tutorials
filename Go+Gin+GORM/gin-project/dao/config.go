@@ -13,14 +13,13 @@ func InitMySQL() (err error) {
 	if err != nil {
 		panic(err)
 	}
+
 	// 为模型`User`创建表
 	//DB.CreateTable(&User{})
 
 	// 创建表`users'时将“ENGINE = InnoDB”附加到SQL语句
 	//DB.Set("gorm:table_options", "ENGINE=InnoDB").CreateTable(&User{})
-	//user := User{ID: 100, Name: "Jinzhu"}
-	//service.CreateAUser(&user)
-	//DB.Create(&user)
+
 	return DB.DB().Ping()
 }
 
