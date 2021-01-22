@@ -4,7 +4,7 @@
 
 ### Objects
 
-**Everything is an object!** (和Java一样，Python中亦是万物皆对象。Python是一门可以面向对象的语言，C语言不是，C语言单纯面向过程)
+**Everything is an object!** (和 Java 一样，Python 中亦是万物皆对象。Python 是一门可以面向对象的语言，C 语言不是，C 语言单纯面向过程)
 
 ```python
 # >>> help(isinstance)
@@ -22,8 +22,9 @@ isinstance(None, object) # => True
 isinstance(str, object) # => True
 isinstance(object, object) # => True
 ```
+
 - Objects have identity, type, and value
-- Variables are un-typed (dynamically typed) (Python是一门使用[Duck Typing](https://zh.wikipedia.org/wiki/鸭子类型)鸭子类型的语言，动态类型的语言风格有利有弊)
+- Variables are un-typed (dynamically typed) (Python 是一门使用[Duck Typing](https://zh.wikipedia.org/wiki/鸭子类型)鸭子类型的语言，动态类型的语言风格有利有弊)
 
 The type determines what can be done to an object (e.g., does it have a length?)
 
@@ -41,7 +42,7 @@ isinstance(type('unicorn'), object) # => True
 
 ### Variables
 
-![fig](3.png)
+![fig](../img/3.png)
 
 ## Strings, Revisited
 

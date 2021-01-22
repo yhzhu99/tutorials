@@ -22,7 +22,7 @@
 - 安装过程中选择Install for All Users
 - Advanced Options都选上
 
-![fig](4.png)
+![fig](../img/4.png)
 
 ### VS Code
 
@@ -32,13 +32,13 @@ VS Code非常好用，轻量、美观、功能强大
 
 新建一个Python文件后，会提示安装Python插件，装上即可
 
-![fig](5.png)
+![fig](../img/5.png)
 
 ## 2 怎么运行
 
 - click右上角的三角
 
-![fig](1.png)
+![fig](../img/1.png)
 
 ## 3 Comments 注释
 
@@ -98,7 +98,7 @@ type(michael) # => str
 - Python strings are Unicode by default (yes – this means we can use emoji in Python strings! ! )
 - You can only concatenate strings with strings! If x is an integer, it must be cast as a string (str(x)) before being concatenated with another string.
 
-![fig](2.png)
+![fig](../img/2.png)
 
 ```python
 a = "Hello, World"
