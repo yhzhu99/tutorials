@@ -7,7 +7,7 @@
 - 统计科研工作者广泛使用R进行计算和发表算法
 - ...
 
-![fig](8.png)
+![fig](img/8.png)
 
 2020.7.22 IEEE的排名 R相当靠前
 
@@ -19,25 +19,25 @@
 
 选择64-bit用户安装，其余全程下一步即可
 
-![fig](1.png)
+![fig](img/1.png)
 
 但这默认的IDE太难用了，需要再装个RStudio
 
 [Download RStudio Desktop](https://rstudio.com/products/rstudio/download/#download)
 
-![fig](2.png)
+![fig](img/2.png)
 
 （全程下一步）
 
 ### 2.2 配置
 
-![fig](3.png)
+![fig](img/3.png)
 
 装完就长这样，第一个R程序`print xxx`，能运行
 
 整个软件默认的字体非常小，在Tools-Global Options-Appearance里，我把Zoom调成了125%（里面也好换主题
 
-![fig](4.png)
+![fig](img/4.png)
 
 ### 2.3 运行
 
@@ -45,15 +45,15 @@ R和Python一样有两个地方可以写代码:
 
 - 一种是在Console里写，基本用不到
 
-![fig](5.png)
+![fig](img/5.png)
 
 - 一种是在新建的文件`xx.R`里写
 
-![fig](6.png)
+![fig](img/6.png)
 
 new R Script，ctrl+S保存时选择保存位置、文件名，如`test.R`
 
-![fig](7.png)
+![fig](img/7.png)
 
 Run执行代码，有两种情况：
 
@@ -121,6 +121,7 @@ Not knowing that `b` is a character object (which often is much less obvious tha
 | exp(n)   | 自然常数e的n次方                |                                            |
 | log(m,n) | n的对数函数，返回n的几次方等于m | 这里m是上标，n是下标，和直觉的相反，蛮坑的 |
 | log10(m) | 相当于log(m,10)                 |                                            |
+
 ### 4.3 取整
 
 | 一些取整函数 | 参数模型 | 含义                       |
@@ -210,7 +211,7 @@ If `mean` or `sd` are not specified they assume the default values of `0` and `1
 > a=1.23e2 # 科学计数法
 > print(a)
 [1] 123
-> 'qsy'=="qsy" # 单引号、双引号下的qsy在R中是一样的
+> 'abc'=="abc" # 单引号、双引号下的abc在R中是一样的
 [1] TRUE # R中的逻辑值是TRUE和FALSE，大小写敏感的，Python里是True和False
 ```
 

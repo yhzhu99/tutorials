@@ -12,7 +12,7 @@
 
 （可以多翻翻Stanford给的蛮多的资源链接）
 
-![fig](9.png)
+![fig](img/9.png)
 
 ## Conditional Statements
 
@@ -46,7 +46,7 @@ if(is.integer(x)){ # is.integer判断x是否是整型，x不是整型 (2L这种�
 - **格式**：`switch(expression, case1, case2, case3....)`
 - **switch** 语句中的 `expression`是一个常量表达式，可以是整数或字符串，如果是整数则返回对应的`case`位置值，如果整数不在位置的范围内则返回`NULL`
 - 如果匹配到多个值则返回第一个
--  `expression`如果是字符串，则对应的是`case`中的变量名对应的值，没有匹配则没有返回值。
+- `expression`如果是字符串，则对应的是`case`中的变量名对应的值，没有匹配则没有返回值。
 - `switch`没有默认参数可用，即一定有`expression`、`case`
 
 ```r
@@ -168,7 +168,7 @@ ggplot(data.frame(smpl_means), aes(x = smpl_means)) +
     theme_bw()
 ```
 
-![fig](10.png)
+![fig](img/10.png)
 
 The dashed red line indicates the population mean. While our sample  estimates are centered around this mean (good news!), the range of the  estimates is quite large. In fact, about 10% of the time we’d get an  estimate of the mean that is either almost 9 centimeters (3.5 inches)  below the actual mean or almost 9 centimeters above the actual mean:
 
