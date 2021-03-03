@@ -1,9 +1,10 @@
 # Golang 后端环境配置
+
 ## Go
 
 > Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
 
-[菜鸟Go 语言教程](https://www.runoob.com/go/go-tutorial.html)
+[菜鸟 Go 语言教程](https://www.runoob.com/go/go-tutorial.html)
 
 [Download Go](https://golang.org/dl/)
 
@@ -11,19 +12,19 @@
 
 - 环境变量(应该已经配好了)
 
-![](img/2020-11-16-14-14-06.png)
+![fig](img/2020-11-16-14-14-06.png)
 
 - 设置代理
 
-在cmd中：
+在 cmd 中：
 
 ```go
 go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
-- 检查Go是否安装成功(查看go版本)
+- 检查 Go 是否安装成功(查看 go 版本)
 
-![](img/2020-11-16-14-15-32.png)
+![fig](img/2020-11-16-14-15-32.png)
 
 ## Goland
 
@@ -33,19 +34,19 @@ go env -w GOPROXY=https://goproxy.cn,direct
 
 要用的自行研究
 
-### 使用VS Code
+### 使用 VS Code
 
-- 安装插件Go
+- 安装插件 Go
 
-![](img/2020-11-16-14-22-50.png)
+![fig](img/2020-11-16-14-22-50.png)
 
-- Ctrl+Shift+P 打开命令面板，输入go: Install/Update tools，Press "Enter"
+- Ctrl+Shift+P 打开命令面板，输入 go: Install/Update tools，Press "Enter"
 
-![](img/2020-11-16-14-36-03.png)
+![fig](img/2020-11-16-14-36-03.png)
 
 - 全选，Click "OK"
 
-![](img/2020-11-16-14-36-25.png)
+![fig](img/2020-11-16-14-36-25.png)
 
 - Example: `hello.go`
 
@@ -59,7 +60,7 @@ func main(){
 }
 ```
 
-- 在该文件的目录下，在Terminal中运行以下命令，可打印出`Hello, World!`：
+- 在该文件的目录下，在 Terminal 中运行以下命令，可打印出`Hello, World!`：
 
 ```go
 go run hello.go //其实是2步：go build hello.go + ./hello
@@ -67,12 +68,13 @@ go run hello.go //其实是2步：go build hello.go + ./hello
 
 ## Gin
 
-- 安装 Gin：在Terminal中，输入`go get -u -v github.com/gin-gonic/gin` (建议开VPN)
+- 安装 Gin：在 Terminal 中，输入`go get -u -v github.com/gin-gonic/gin` (建议开 VPN)
+
   - `-v`：打印出被构建的代码包的名字
   - `-u`：已存在相关的代码包，强行更新代码包及其依赖包
 
-- 创建一个Gin Project (新建一个Folder，如`gin-project`)
-- 用VS Code打开该文件夹
+- 创建一个 Gin Project (新建一个 Folder，如`gin-project`)
+- 用 VS Code 打开该文件夹
 - 在根目录下，创建`main.go`
 
 ```go
@@ -92,24 +94,24 @@ func main() {
 }
 ```
 
-- 在根目录下通过以下命令：`go mod`来管理Package
+- 在根目录下通过以下命令：`go mod`来管理 Package
 
 ```go
 go mod init gin-project
 ```
 
 - 运行：`go run main.go`
-- 浏览器中打开`localhost:8080/ping`可观察到返回到的json数据
+- 浏览器中打开`localhost:8080/ping`可观察到返回到的 json 数据
 
 **Note:**
 
-- Go中package的用法参见`go-project`的目录结构、`main.go`中的写法(`import`, `dao.New()`，大小写...)
+- Go 中 package 的用法参见`go-project`的目录结构、`main.go`中的写法(`import`, `dao.New()`，大小写...)
 
 ## GORM
 
-> Golang写的，开发人员友好的ORM库
+> Golang 写的，开发人员友好的 ORM 库
 
-- 基础的连接MySQL的用法见 `main.go` in `gin-project` directory
+- 基础的连接 MySQL 的用法见 `main.go` in `gin-project` directory
 
 ```go
 import (
@@ -131,4 +133,4 @@ func main() {
 }
 ```
 
-如果能在Terminal中观察到`"connection succeeded"`，则表明GORM配置完成。
+如果能在 Terminal 中观察到`"connection succeeded"`，则表明 GORM 配置完成。

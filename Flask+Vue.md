@@ -1,20 +1,18 @@
-
-
 # Vue+Flask 前后端分离
 
 ## 环境配置
 
-### 虚拟环境Pipenv的使用
+### 虚拟环境 Pipenv 的使用
 
-对于使用Flask、Django等Python框架的项目的开发，虚拟环境的使用非常有必要
+对于使用 Flask、Django 等 Python 框架的项目的开发，虚拟环境的使用非常有必要
 
-具体安装及使用方法见文件Pipenv
+具体安装及使用方法见文件 Pipenv
 
 ### Vue
 
-装Node.js、Vue.js
+装 Node.js、Vue.js
 
-npm不好用，直接使用淘宝npm镜像cnpm
+npm 不好用，直接使用淘宝 npm 镜像 cnpm
 
 ```shell
 # 查看版本
@@ -49,12 +47,12 @@ $ vue create frontend
 
 Note:
 
-- ESLint代码格式检查实在过于严格，此处不选
+- ESLint 代码格式检查实在过于严格，此处不选
 - 单元测试的内容不用选
 
 ### Flask
 
-创建后端Flask项目前，先创建好虚拟环境
+创建后端 Flask 项目前，先创建好虚拟环境
 
 ```shell
 pipenv install # 创建虚拟环境
@@ -70,18 +68,19 @@ pipenv shell # 进入虚拟环境
 ```shell
 cnpm install ant-design-vue --save # 安装
 ```
-- 在Vue目录中，修改`src/main.js`
+
+- 在 Vue 目录中，修改`src/main.js`
 - 按需加载，修改配置
 
 ### 跨域
 
 安装`flask_cors` 包
 
-```
+```shell
 pip install -U flask-cors
 ```
 
-使用flask_cors的CORS，代码示例
+使用 flask_cors 的 CORS，代码示例
 
 ```python
 from flask_cors import CORS
@@ -90,8 +89,8 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}}
 
 ## 前后端分离实例
 
-- 为Flask+Vue前后端的项目创建文件夹，如demo
-- 创建Vue前端(frontend)
+- 为 Flask+Vue 前后端的项目创建文件夹，如 demo
+- 创建 Vue 前端(frontend)
 
 ```shell
 mkdir demo
@@ -99,20 +98,20 @@ cd demo
 vue create frontend #具体如何设置见上
 ```
 
-- 在VS Code中open folder，选择frontend
-- 在/frontend的根目录下，创建文件vue.config.js
+- 在 VS Code 中 open folder，选择 frontend
+- 在/frontend 的根目录下，创建文件 vue.config.js
 
 ```js
 module.exports = {
-    assetsDir: 'static',
-    devServer: {
-        proxy: 'http://localhost:5000/'
-    }
-}
+  assetsDir: "static",
+  devServer: {
+    proxy: "http://localhost:5000/",
+  },
+};
 ```
 
-- 创建虚拟环境+后端Flask
-- 在/demo根目录下，打开cmd
+- 创建虚拟环境+后端 Flask
+- 在/demo 根目录下，打开 cmd
 
 ```shell
 pipenv install
@@ -120,7 +119,7 @@ pipenv shell
 (venv) pip install Flask
 ```
 
-- 在/demo根目录下，创建文件app.py
+- 在/demo 根目录下，创建文件 app.py
 
 ```python
 from flask import Flask, render_template, jsonify
@@ -152,65 +151,66 @@ if __name__ == "__main__":
 (venv) flask run # 打开Flask端项目
 ```
 
-在frontend文件夹中安装
+在 frontend 文件夹中安装
 
 ```shell
 (venv) npm install --save axios # 安装axios库
 ```
 
-在Vue项目中，修改Home.vue
+在 Vue 项目中，修改 Home.vue
 
 ```vue
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
     <p>Random number from backend: {{ randomNumber }}</p>
     <button @click="getRandom">New random number</button>
   </div>
 </template>
 
 <script>
-import axios from 'axios' 
+import axios from "axios";
 // 导入 axios 库。getrandomfrombackend方法将使用 AXIOS 异步访问 API 并检索结果。最后，方法 getRandom 现在可使用 getRandomFromBackend 函数来获取随机值。
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
+    HelloWorld,
   },
-  data () {
+  data() {
     return {
-      randomNumber: 0
-    }
+      randomNumber: 0,
+    };
   },
   methods: {
-    getRandom () {
+    getRandom() {
       // this.randomNumber = this.getRandomInt(1, 100)
-      this.randomNumber = this.getRandomFromBackend()
+      this.randomNumber = this.getRandomFromBackend();
     },
-    getRandomFromBackend () {
-      const path = `http://localhost:5000/api/random`
-      axios.get(path)
-      .then(response => {
-        this.randomNumber = response.data.randomNumber
-      })
-      .catch(error => {
-        console.log(error)
-      })
-    }
+    getRandomFromBackend() {
+      const path = `http://localhost:5000/api/random`;
+      axios
+        .get(path)
+        .then((response) => {
+          this.randomNumber = response.data.randomNumber;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
-  created () {
-    this.getRandom()
-  }
-}
+  created() {
+    this.getRandom();
+  },
+};
 </script>
 ```
 
 Note:
 
-- 在VS Code中的NPM SCRIPTS，build并serve
-- 刷新 localhost:8080，会发现没有随机值是正常现象。因为Flask服务器API默认关闭到其他Web服务器
-- 在管理Flask的cmd里，ctrl+c重启项目，再打开，便当可得到想要的生成随机数效果
+- 在 VS Code 中的 NPM SCRIPTS，build 并 serve
+- 刷新 localhost:8080，会发现没有随机值是正常现象。因为 Flask 服务器 API 默认关闭到其他 Web 服务器
+- 在管理 Flask 的 cmd 里，ctrl+c 重启项目，再打开，便当可得到想要的生成随机数效果
