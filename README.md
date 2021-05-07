@@ -1,3 +1,3 @@
-# EnvSetting
+# EnvSettings
 
 > Development Environment Setup
