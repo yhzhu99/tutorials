@@ -1,0 +1,106 @@
+\section{绘制SVG图形}
+
+前面我们所处理对象都是 HTML 的文字，没有涉及图形的制作。若要进行绘图，首要需要的是一块绘图的``画布''。在HTML 5中， 提供了两种强有力的``画布''：SVG 和 Canvas。其中，D3对SVG的支持非常好，提供了众多的SVG图形的生成器。本节中，我们将用SVG绘制简单的条形图为例来了解D3是如何操作SVG图形的。
+
+\subsection{什么是SVG}
+
+SVG，指可缩放矢量图形（Scalable Vector Graphics），是用于描述二维矢量图形的一种图形格式，是由万维网联盟制定的开放标准。 SVG 使用 XML 格式来定义图形，除了 IE8 之前的版本外，绝大部分浏览器都支持 SVG，可将 SVG 文本直接嵌入 HTML 中显示。
+
+SVG 有如下特点：
+
+\begin{enumerate}
+    \item SVG 绘制的是矢量图，因此对图像进行放大不会失真。
+    \item 基于 XML，可以为每个元素添加 JavaScript 事件处理器。
+    \item 每个图形均视为对象，更改对象的属性，图形也会改变。
+\end{enumerate}
+
+\subsection{添加画布}
+
+使用 D3 在 body 元素中添加 SVG 画布的代码如下：
+
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,linenos]{javascript}
+var width = 300;  // 画布的宽度
+var height = 300;   // 画布的高度
+var svg = d3.select("body") // 选择文档中的body元素
+    .append("svg") // 添加一个SVG元素
+    .attr("width", width) // 设定宽度
+    .attr("height", height); // 设定高度
+\end{minted}
+
+有了画布，接下来就可以在画布上作图了。
+
+\subsection{绘制矩形}
+
+在 SVG 中，矩形的元素标签是 rect，在HTML中可作为标签使用。
+
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,linenos]{html}
+<svg>
+    <rect></rect>
+    <rect></rect>
+</svg>
+\end{minted}
+
+上面的 rect 里没有矩形的属性。矩形的属性，常用的有四个：
+
+\begin{enumerate}
+    \item x：矩形左上角的 x 坐标
+    \item y：矩形左上角的 y 坐标
+    \item width：矩形的宽度
+    \item height：矩形的高度
+\end{enumerate}
+
+要注意的是，在 SVG 中，x 轴的正方向是水平向右，y 轴的正方向是垂直向下的。
+
+现在，我们给出一组数据（截止到2021年7月31日的东京奥运会金牌榜前五名的金牌数）对此进行可视化。数据如下：
+
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,linenos]{javascript}
+var arr = [21, 17, 16, 11, 10];  // 数据（表示矩形的宽度）
+\end{minted}
+
+我们直接将数值的大小作为矩形的宽度，然后添加以下代码：
+
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,linenos]{javascript}
+var rectHeight = 25; // 每个矩形所占的像素高度（包括空白）
+svg.selectAll("rect")
+    .data(arr)
+    .enter()
+    .append("rect")
+    .attr("x",20)
+    .attr("y",function(d,i){
+         return i * rectHeight;
+    }) // 为各元素的属性赋值
+    .attr("width",function(d){
+         return d*10;
+         // 为了显示效果对数值进行了缩放
+         // 更好的方法是通过设置比例尺来优化
+    })
+    .attr("height",rectHeight-5)
+    .attr("fill","gold"); // 设置填充色为金色
+\end{minted}
+
+其中便应用到了\verb|enter()|方法，它使得在有数据，而没有足够图形元素的情况下，补充足够的元素。
+
+最终结果如\figref{fig:gold_bar_chart}所示。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figure/D3/gold_bar_chart.png}
+    \caption{\textbf{金牌榜条形图}}
+    \label{fig:gold_bar_chart}
+\end{figure}
+
+\subsection{使用比例尺}
+
+在先前的代码注释中，提到了比例尺的概念。比例尺中有线性比例尺（连续）、序数比例尺（离散）等多种类型之分。其中线性比例尺能使数值从一个连续的区间（定义域 domain）映射到另一个区间（值域 range），来解决条形图宽度的问题。
+
+仍然对于金牌榜的数据，我们应用以下代码来使用线性比例尺：
+
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,linenos]{javascript}
+var arr = [21, 17, 16, 11, 10];
+var max = d3.max(arr);
+var linear = d3.scaleLinear()
+        .domain([0, max]) // 定义域
+        .range([0, 300]); // 值域
+\end{minted}
+
+其中\verb|d3.scaleLinear()| 的返回值，可被当做函数来使用。因此，有如这样的用法：\verb|linear(0.9)|去调用该比例尺，于是先前代码中的\verb|return d*10;|可替换成\verb|return linear(d);|
