@@ -1,0 +1,61 @@
+\usepackage[fontset=ubuntu]{ctex}
+% \usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} 
+\usepackage{array}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{wrapfig}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{makecell}
+\usepackage{color}
+\usepackage{minted}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{svg}
+\usepackage{enumitem}
+\usepackage[center]{titlesec}
+\usepackage{caption}
+\usepackage{cleveref}
+
+\pagestyle{plain}
+
+
+
+\renewcommand\thefigure{\mbox{\thechapter-\arabic{figure}}}
+\renewcommand\thetable{\mbox{\thechapter-\arabic{table}}}
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\chref}[1]{第~\ref{#1}~章}
+\newcommand{\secref}[1]{第~\ref{#1}~节}
+\newcommand{\figref}[1]{图~\ref{#1}~}
+\newcommand{\tabref}[1]{表~\ref{#1}~}
+\newcommand{\equaref}[1]{公式~\eqref{#1}~}
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
+\titleformat{\chapter}{\raggedright\Huge\bfseries\centering}{第\,\thechapter\,章}{1em}{}
+\titleformat{\section}{\raggedright\LARGE\bfseries}{\,\thesection\,}{1em}{}
+\titleformat{\subsection}{\raggedright\Large\bfseries}{\,\thesubsection\,}{1em}{}
+% \titleformat{\subsubsection}{\raggedright\large\bfseries}{\,\thesubsubsection\,}{1em}{}
+\titleformat{\subsubsection}[block]{\raggedright\large\bfseries}{\arabic{subsubsection}.}{1em}{}[]
+\titleformat{\paragraph}{\raggedright\normalsize\bfseries}{\,\theparagraph\,}{1em}{}
+
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\setitemize{leftmargin=3em,itemsep=0em,partopsep=0em,parsep=0em,topsep=-0em}
+\setenumerate{leftmargin=3em,itemsep=0em,partopsep=0em,parsep=0em,topsep=0em,label={(\arabic*)}}
+
+%\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+
+\DeclareCaptionLabelFormat{mycaptionlabel}{#1 #2 \hspace{1.5ex}}
+\captionsetup[figure]{labelfont={bf}, labelformat=mycaptionlabel, name={图}, labelsep=none}
+\captionsetup[table]{labelfont={bf}, labelformat=mycaptionlabel, name={表}, labelsep=none}
