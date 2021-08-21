@@ -55,3 +55,20 @@ git log <rev> -- README.md
 There are more complex solutions like doing this manually or rewriting the history as described in other answers.
 
 The git-subtree command is a part of official git-contrib, some packet managers install it by default (OS X Homebrew). But you might have to install it by yourself in addition to git.
+
+## Git - Windows AND linux line-endings
+
+[Reference](https://stackoverflow.com/questions/34610705/git-windows-and-linux-line-endings)
+
+On Windows:
+
+``shell
+$ git config --global core.autocrlf true
+```
+
+On Linux:
+
+
+``shell
+$ git config --global core.autocrlf input
+```
