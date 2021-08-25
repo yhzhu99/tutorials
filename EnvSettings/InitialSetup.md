@@ -10,9 +10,8 @@
 - Wechat
 - FlyPY
 - PDFelement
-- SSR
-- 网易云音乐
-- 百度网盘
+- [shadowsocks](https://shadowsocks.org/en/download/clients.html)
+- HWIDGEN
 
 ## Config
 
@@ -63,9 +62,9 @@ Path：%JAVA_HOME%\bin
 ### Virtual Environment
 
 - [VMware](https://www.vmware.com/cn.html)
-
-[VMWare 激活](https://www.52pojie.cn/thread-1027984-1-1.html) key: `UY758-0RXEQ-M81WP-8ZM7Z-Y3HDA`
-
+- [VMWare 激活](https://www.52pojie.cn/thread-1027984-1-1.html) key: `UY758-0RXEQ-M81WP-8ZM7Z-Y3HDA`
+- [VMware Ubuntu安装](https://blog.csdn.net/qq_41782425/article/details/85119258)
+- [VMware Tools安装](https://blog.csdn.net/qq_41782425/article/details/85125807)
 - Ubuntu
 - [Manjaro](https://manjaro.org/)
 - Dosbox
@@ -73,12 +72,16 @@ Path：%JAVA_HOME%\bin
 
 ### Adobe
 
-- Premiere
-- Lightroom
+- [vposy](https://weibo.com/vposy)
+- [Download](https://www.sameen.art/download.html?pid=466)
+- [Lightroom Free Presets](https://www.freepresets.com/)
+- [Fix the photo](https://fixthephoto.com/)
 
 ### Office
 
 - [Office Tool Plus](https://otp.landian.vip/zh-cn/)
+- [OTP教程](https://blog.csdn.net/weixin_45729075/article/details/106224430)
+- [PPT Templates](http://www.1ppt.com/)
 
 ### Github
 
