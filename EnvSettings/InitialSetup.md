@@ -18,47 +18,25 @@
 
 ### VS Code
 
-- ASM Code Lens
-- Atom One Dark Theme
-- Bracket Pair Colorizer
-- C/C++
-- C/C++ Compile Run
-- C++ Intellisense
-- CMake
-- Code Spell Checker
-- Debugger for Java
-- ESLint
-- GitLens
-- Javadoc Tools
-- Language Support for Java
-- Markdown All in One
-- Markdown TOC
-- Paste Image
-- Python
-- R
-- Vetur
-- VS IntelliCode
-- WakaTime
-
-### C/C++
-
-[C/C++ for Visual Studio Code](https://code.visualstudio.com/docs/languages/cpp)
+- [Download](https://code.visualstudio.com/)
 
 ### Java
 
-- [安装 JDK15](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [安装 Oracle JDK15](https://www.oracle.com/java/technologies/javase-downloads.html)
 - 设置/添加系统环境变量
 
-```
+```sh
 JAVA_HOME：JDK的安装目录，例：C:\Program Files\Java\jdk-15
 Path：%JAVA_HOME%\bin
 ```
 
+- [Liberica JDK](https://bell-sw.com/)
 - [安装 IDEA](https://www.jetbrains.com/idea/download/#section=windows)
 
 ### Python
 
 - [Anaconda](https://www.anaconda.com/products/individual)
+- [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
 ### SQL
 
@@ -68,11 +46,10 @@ Path：%JAVA_HOME%\bin
 
 - SSMS
 - PostgreSQL
-- Navicat
 
 [破解教程](https://www.52pojie.cn/thread-952490-1-1.html)
 
-- DataGrip
+- [DataGrip](https://www.jetbrains.com/datagrip/)
 
 ### R
 
@@ -92,7 +69,7 @@ Path：%JAVA_HOME%\bin
 - Ubuntu
 - [Manjaro](https://manjaro.org/)
 - Dosbox
-- MobaXterm
+- [MobaXterm](https://mobaxterm.mobatek.net/)
 
 ### Adobe
 
@@ -101,12 +78,12 @@ Path：%JAVA_HOME%\bin
 
 ### Office
 
-- Office Tool Plus
+- [Office Tool Plus](https://otp.landian.vip/zh-cn/)
 
 ### Github
 
-- Github Desktop
-- Git
+- [Git](https://git-scm.com/)
+- [Github Desktop](https://desktop.github.com/)
 
 ### Vue
 
@@ -114,4 +91,8 @@ Path：%JAVA_HOME%\bin
 
 ### Postman
 
-### Davinci Resolve
+- [Download Postman](https://www.postman.com/downloads/)
+
+### DaVinci Resolve
+
+- [Donwload](https://www.blackmagicdesign.com/cn/products/davinciresolve/)
