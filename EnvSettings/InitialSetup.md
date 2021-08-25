@@ -2,18 +2,16 @@
 
 ## Softwares to Install
 
-- Bandizip
-- Honeyview
+- [BandiSoft](https://cn.bandisoft.com/)
 - IObit Uninstaller
-- PotPlayer
-- TIM
-- Wechat
-- FlyPY
-- PDFelement
+- [PotPlayer](https://potplayer.daum.net/)
+- [TIM](https://office.qq.com/)
+- [Wechat](https://weixin.qq.com/)
+- [FlyPY](http://flypy.ys168.com/)
 - [shadowsocks](https://shadowsocks.org/en/download/clients.html)
 - HWIDGEN
 
-## Config
+## Configs
 
 ### VS Code
 
@@ -39,48 +37,32 @@ Path：%JAVA_HOME%\bin
 
 ### SQL
 
-- SQL Server
-
-[SQL Server 安装教程](https://blog.csdn.net/NBbz2018/article/details/92669721)
-
+- [SQL Server 安装教程](https://blog.csdn.net/NBbz2018/article/details/92669721)
 - SSMS
 - PostgreSQL
-
-[破解教程](https://www.52pojie.cn/thread-952490-1-1.html)
-
 - [DataGrip](https://www.jetbrains.com/datagrip/)
-
-### R
-
-- R
-- RStudio
-
-### Markdown
-
-- Typora
-
-### Virtual Environment
+### VMs
 
 - [VMware](https://www.vmware.com/cn.html)
 - [VMWare 激活](https://www.52pojie.cn/thread-1027984-1-1.html) key: `UY758-0RXEQ-M81WP-8ZM7Z-Y3HDA`
 - [VMware Ubuntu安装](https://blog.csdn.net/qq_41782425/article/details/85119258)
 - [VMware Tools安装](https://blog.csdn.net/qq_41782425/article/details/85125807)
-- Ubuntu
+- [Ubuntu](https://ubuntu.com/download)
 - [Manjaro](https://manjaro.org/)
-- Dosbox
 - [MobaXterm](https://mobaxterm.mobatek.net/)
 
-### Adobe
+### Media
 
-- [vposy](https://weibo.com/vposy)
-- [Download](https://www.sameen.art/download.html?pid=466)
+- [vposy's Weibo](https://weibo.com/vposy)
+- [Download Adobe Softwares](https://www.sameen.art/download.html?pid=466)
+- [DaVinci Resolve](https://www.blackmagicdesign.com/cn/products/davinciresolve/)
 - [Lightroom Free Presets](https://www.freepresets.com/)
 - [Fix the photo](https://fixthephoto.com/)
 
 ### Office
 
 - [Office Tool Plus](https://otp.landian.vip/zh-cn/)
-- [OTP教程](https://blog.csdn.net/weixin_45729075/article/details/106224430)
+- [OTP Tutorial](https://blog.csdn.net/weixin_45729075/article/details/106224430)
 - [PPT Templates](http://www.1ppt.com/)
 
 ### Github
@@ -88,14 +70,14 @@ Path：%JAVA_HOME%\bin
 - [Git](https://git-scm.com/)
 - [Github Desktop](https://desktop.github.com/)
 
-### Vue
+### Node
 
 - [node.js](https://nodejs.org/zh-cn/)
 
-### Postman
+### Frontend
 
+- [Vue.js](https://vuejs.org/)
+- [React](https://reactjs.org/)
+- [Vuetify](https://vuetifyjs.com/zh-Hans/)
+- [Material-UI](https://material-ui.com/zh/)
 - [Download Postman](https://www.postman.com/downloads/)
-
-### DaVinci Resolve
-
-- [Donwload](https://www.blackmagicdesign.com/cn/products/davinciresolve/)
