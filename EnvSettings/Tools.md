@@ -84,27 +84,27 @@ pip install scrapy -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 [Reference](https://blog.csdn.net/u012843189/article/details/81720854)
 
-`apt-get remove packagename`
+- `apt-get remove packagename`
+  
+  该命令将移除与packagename相关联的所有二进制文件，但是不会移除与之相关联的配置文件或数据文件(configuration or data files)，同样也不会移除packagename所依赖的包。
 
-​该命令将移除与packagename相关联的所有二进制文件，但是不会移除与之相关联的配置文件或数据文件(configuration or data files)，同样也不会移除packagename所依赖的包。
+- `apt-get purge packagename` 或者 `apt-get remove --purge packagename`
+  
+  这两条命令是等价的。它们的作用是：移除与包packagename相关联的所有文件，这些文件包括二进制文件和全局配置文件。注意，该命令不会移除packagename所依赖的包，也不会移除位于用户家目录中的与packagename相关联的配置文件或数据文件。
+  
+  当我们想要完全卸载一个程序的时候，这条命令将特别有用。因为我们经常遇到安装一个应用程序过程中出现安装失败，导致我们需要重新安装它；或者由于某个应用程序的配置文件混乱，我们想完全卸载这个应用程序然后再重新安装，那么就可以使用这条命令先完全卸载应用程序所在的包。
 
-`apt-get purge packagename` 或者 `apt-get remove --purge packagename`
+- `apt-get autoremove`
+  
+  卸载当前系统中的所有孤立的包(remove orphaned packages)，具体指那些曾经被其他包所依赖，但是现在不被任何包依赖了的包。例如，我们用apt-get remove --purge packagename卸载了packagename，但是packagename所依赖的包还保留在系统中，这时我们就可以用命令apt-get autoremove来卸载这些依赖包。注意，这条命令卸载的依赖包一定指的是孤立的包，即不再被任何包给依赖了的包。
 
-​这两条命令是等价的。它们的作用是：移除与包packagename相关联的所有文件，这些文件包括二进制文件和全局配置文件。注意，该命令不会移除packagename所依赖的包，也不会移除位于用户家目录中的与packagename相关联的配置文件或数据文件。
+- `aptitude remove packagename` 或者 `aptitude purge packagename`
+  
+  上面两条命令也会卸载被packagename依赖但是不被系统中其他包依赖的包。
 
-​当我们想要完全卸载一个程序的时候，这条命令将特别有用。因为我们经常遇到安装一个应用程序过程中出现安装失败，导致我们需要重新安装它；或者由于某个应用程序的配置文件混乱，我们想完全卸载这个应用程序然后再重新安装，那么就可以使用这条命令先完全卸载应用程序所在的包。
-
-`apt-get autoremove`
-
-​卸载当前系统中的所有孤立的包(remove orphaned packages)，具体指那些曾经被其他包所依赖，但是现在不被任何包依赖了的包。例如，我们用apt-get remove --purge packagename卸载了packagename，但是packagename所依赖的包还保留在系统中，这时我们就可以用命令apt-get autoremove来卸载这些依赖包。注意，这条命令卸载的依赖包一定指的是孤立的包，即不再被任何包给依赖了的包。
-
-`aptitude remove packagename` 或者 `aptitude purge packagename`
-
-​上面两条命令也会卸载被packagename依赖但是不被系统中其他包依赖的包。
-
-`apt-get -s remove packagename`
-
-​这条命令将模拟卸载pacagename包，但是不会真的卸载。一般在卸载某个包之前，我们先用这条命令来查看一下卸载过程中会卸载哪些内容，防止因为拼错包名packagename而卸载了不是我们意图卸载的包。
+- `apt-get -s remove packagename`
+  
+  这条命令将模拟卸载pacagename包，但是不会真的卸载。一般在卸载某个包之前，我们先用这条命令来查看一下卸载过程中会卸载哪些内容，防止因为拼错包名packagename而卸载了不是我们意图卸载的包。
 
 ## WSL
 
@@ -131,6 +131,7 @@ pip install scrapy -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ## Node
 
+- [Install Node.js](https://computingforgeeks.com/install-node-js-14-on-ubuntu-debian-linux/)
 - [NPM 切换淘宝源](https://www.jianshu.com/p/fa233e05b010)
 - [jS heap went out of memory](https://stackoverflow.com/questions/57605441/error-this-is-probably-not-a-problem-with-npm-there-is-likely-additional-loggi)
 
