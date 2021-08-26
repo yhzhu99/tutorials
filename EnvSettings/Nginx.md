@@ -125,3 +125,45 @@ server {
 ```sh
 sudo ln -s /etc/nginx/sites-available/api.yhzhu.top /etc/nginx/sites-enabled/api.yhzhu.top
 ```
+
+## SSL & HTTPS
+
+[Reference](https://cloud.tencent.com/document/product/400/35244)
+
+已在 SSL 证书管理控制台 中下载并解压缩 cloud.tencent.com 证书文件包到本地目录。解压缩后，可获得相关类型的证书文件。其中包含 Nginx 文件夹和 CSR 文件：
+
+- 文件夹名称：Nginx
+- 文件夹内容：
+  - `1_cloud.tencent.com_bundle.crt` 证书文件
+  - `2_cloud.tencent.com.key` 私钥文件
+- CSR 文件内容：`cloud.tencent.com.csr` 文件
+
+> CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
+
+将已获取到的 `1_cloud.tencent.com_bundle.crt` 证书文件和 `2_cloud.tencent.com.key` 私钥文件从本地目录拷贝到 Nginx 服务器的 /etc/nginx/ 目录（此处为 Nginx 默认安装目录，请根据实际情况操作）下。
+
+修改配置：
+
+```python
+server {
+ # SSL 访问端口号为 443
+    listen 443 ssl; 
+ # 填写绑定证书的域名
+    server_name cloud.tencent.com; 
+ # 证书文件名称
+    ssl_certificate 1_cloud.tencent.com_bundle.crt; 
+ # 私钥文件名称
+    ssl_certificate_key 2_cloud.tencent.com.key; 
+    ssl_session_timeout 5m;
+ # 请按照以下协议配置
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; 
+ # 请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE; 
+    ssl_prefer_server_ciphers on;
+    location / {
+    # 网站主页路径。此路径仅供参考，具体请您按照实际目录操作。
+        root html; 
+        index  index.html index.htm;
+    }
+}
+```
