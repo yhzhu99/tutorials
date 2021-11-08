@@ -117,7 +117,7 @@ pip install scrapy -i https://pypi.tuna.tsinghua.edu.cn/simple
 ## MySQL
 
 - [Converting a MySQL database from latin1 to utf8](https://techleader.pro/a/420-Converting-a-MySQL-database-from-latin1-to-utf8)
-- [阿里云数据库 RDS 申请或释放外网地址](https://help.aliyun.com/document_detail/97736.htm?spm=a2c4g.11186623.2.7.65406ba4RXFf3v)
+- [阿里云数据库 RDS 申请或释放外网地址](https://help.aliyun.com/document_detail/97736.htm)
 - [彻底删除 MySQL](https://www.ywnz.com/linuxysjk/3141.html)
 - [How To Install MySQL 8.0 on Ubuntu 20.04](https://computingforgeeks.com/how-to-install-mysql-8-on-ubuntu/)
 
