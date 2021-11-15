@@ -138,3 +138,11 @@ pip install scrapy -i https://pypi.tuna.tsinghua.edu.cn/simple
   ```sh
   node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build --prod
   ```
+
+## scp
+
+- 应用场景：两台服务器之间免密传输：比如A和B
+- 如果之前A没有生成过公钥，需要用 `ssh-keygen -t rsa -b 4096` 来生成公钥
+- 然后，`cat ~/.ssh/id_rsa.pub`
+- 把输出出来的内容粘贴到B：`vim ~/.ssh/authorized_keys`
+- 传输命令如：scp -r ./mmlab yhzhu@10.10.2.5:/home/yhzhu/anaconda3/envs/mmlab
