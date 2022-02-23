@@ -39,6 +39,8 @@ server {
 
 	location / {
 		try_files $uri $uri/ =404;
+		# 对于Vue这种SPA Project, 应写为如下:
+		# try_files $uri $uri/ /index.html;
 	}
 
 	# SSL configuration
