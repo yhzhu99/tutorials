@@ -17,7 +17,10 @@ git push -f
 在 VS Code 中，选择 bash 作为 terminal
 
 ```shell
-git rebase -i HEAD~2 # 想要删掉从前往后的2个版本
+git rebase -i HEAD~2 # rebase方法, 想要删掉从前往后的2个版本
+git push -f
+
+git reset --hard HEAD~2 # 删掉从前往后的2个版本
 git push -f
 ```
 
